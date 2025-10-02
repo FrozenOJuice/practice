@@ -1,0 +1,22 @@
+[
+    {
+        "user_id": "6070d1a0-999e-4eaf-9bad-2188bd29cb44",
+        "username": "alice",
+        "email": "alice@example.com",
+        "hashed_password": "$2b$12$irRE5bpMaGvHglV3OQwaH.fX5l9Ls4jXN3h4q1nSRfWqOBcTaNSCm",
+        "role": "user",
+        "penalties": [],
+        "refresh_tokens": [
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDcwZDFhMC05OTllLTRlYWYtOWJhZC0yMTg4YmQyOWNiNDQiLCJleHAiOjE3NTk5NjY3MDEsInR5cGUiOiJyZWZyZXNoIn0.5vDKepJfAVq_ztXAi7rvqSYJranf8KZaEo5rXaJ_7Kg"
+        ]
+    },
+    {
+        "user_id": "ae6028ca-7878-4db3-8c04-d39322bd62d5",
+        "username": "admin",
+        "email": "admin@example.com",
+        "hashed_password": "$2b$12$cgPPZmBGVTlu5A6hZiM80OJ285Ewf6i4l9w6Jgz.Kgrbrd4k0wXsK",
+        "role": "admin",
+        "penalties": [],
+        "refresh_tokens": []
+    }
+]
