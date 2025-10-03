@@ -13,7 +13,7 @@ def get_user_dashboard(current_user: TokenData = Depends(get_current_user)):
         raise HTTPException(status_code=403, detail="Only regular users can access this dashboard.")
 
     users = utils.load_users()
-    user = next((u for u in users if u["id"] == current_user.user_id), None)
+    user = next((u for u in users if u["user_id"] == current_user.user_id), None)
 
     if not user:
         raise HTTPException(status_code=404, detail="User not found")

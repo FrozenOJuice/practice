@@ -75,4 +75,4 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
 
 
     # All authenticated users can access
-    return current_user
+    # return current_user

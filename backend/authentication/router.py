@@ -14,26 +14,24 @@ async def register(user: schemas.UserCreate):
         raise HTTPException(status_code=400, detail=message)
     
     new_user = {
-        "id": str(uuid.uuid4()),
+        "user_id": str(uuid.uuid4()),
         "username": user.username,
         "email": user.email,
         "hashed_password": security.hash_password(user.password),
         "role": user.role.value,
         "penalties": [],
-        "transactions": [],
-        "refresh_tokens": [] 
+        "refresh_tokens": []
     }
 
     users.append(new_user)
     utils.save_users(users)
 
     return {
-        "user_id": new_user["id"],
+        "user_id": new_user["user_id"],
         "username": new_user["username"],
         "email": new_user["email"],
         "role": new_user["role"],
         "penalties": new_user["penalties"],
-        "transactions": new_user["transactions"]
     }
 
 @router.post('/login', response_model=schemas.Token)
@@ -49,11 +47,11 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     
     # Create both access and refresh tokens
     access_token = security.create_access_token(
-        data={"sub": user["id"], "role": user["role"]}
+        data={"sub": user["user_id"], "role": user["role"]}
     )
     
     refresh_token = security.create_refresh_token(
-        data={"sub": user["id"]}
+        data={"sub": user["user_id"]}
     )
     
     # Store refresh token in user data (optional - for token revocation)
@@ -77,7 +75,7 @@ async def refresh_token(token_data: schemas.TokenRefresh):
     
     user_id = payload.get("sub")
     users = utils.load_users()
-    user = next((u for u in users if u["id"] == user_id), None)
+    user = next((u for u in users if u["user_id"] == user_id), None)
     
     if not user:
         raise HTTPException(
@@ -94,12 +92,12 @@ async def refresh_token(token_data: schemas.TokenRefresh):
     
     # Create new access token
     new_access_token = security.create_access_token(
-        data={"sub": user["id"], "role": user["role"]}
+        data={"sub": user["user_id"], "role": user["role"]}
     )
     
     # Optionally create new refresh token (rotate refresh tokens)
     new_refresh_token = security.create_refresh_token(
-        data={"sub": user["id"]}
+        data={"sub": user["user_id"]}
     )
     
     # Update user's refresh tokens
@@ -124,7 +122,7 @@ async def logout(token_data: schemas.TokenRefresh):
     
     user_id = payload.get("sub")
     users = utils.load_users()
-    user = next((u for u in users if u["id"] == user_id), None)
+    user = next((u for u in users if u["user_id"] == user_id), None)
     
     if user and token_data.refresh_token in user.get("refresh_tokens", []):
         # Remove the specific refresh token
