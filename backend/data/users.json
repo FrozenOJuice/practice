@@ -7,7 +7,7 @@
         "role": "user",
         "penalties": [],
         "refresh_tokens": [
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDcwZDFhMC05OTllLTRlYWYtOWJhZC0yMTg4YmQyOWNiNDQiLCJleHAiOjE3NjAwNTI2ODYsInR5cGUiOiJyZWZyZXNoIn0.9xl8brOag2gAhKbZlYfOdV_ZHMvGikJFOAmBfTCsgeU"
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDcwZDFhMC05OTllLTRlYWYtOWJhZC0yMTg4YmQyOWNiNDQiLCJleHAiOjE3NjAxOTU4NzUsInR5cGUiOiJyZWZyZXNoIn0.0o_8cH2jJi1hUESZp91hdyHXLq2J7NuNb9LTVOe1kU8"
         ]
     },
     {
@@ -33,6 +33,15 @@
         "username": "joel",
         "email": "joel@example.com",
         "hashed_password": "$2b$12$tjeBQ9Brra1Bsb2NOompdexXw1eOBiCaCfxDg.yvAjdnbc3RtznGy",
+        "role": "user",
+        "penalties": [],
+        "refresh_tokens": []
+    },
+    {
+        "user_id": "74788274-0e10-438b-98e9-7df8aeb3f509",
+        "username": "nkyhnbl",
+        "email": "nkyhnbl@example.com",
+        "hashed_password": "$2b$12$ItV/dLIVkiKuIsmxf6HoiehBNPFzYUWmHeHUaMFb91GuapQ8pO/iC",
         "role": "user",
         "penalties": [],
         "refresh_tokens": []
